@@ -1,0 +1,220 @@
+/* Vodafone & Material Design Theme */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+:root {
+    --vodafone-red: #E60000;
+    --vodafone-white: #FFFFFF;
+    --vodafone-black: #333333;
+    --vodafone-gray: #F4F4F4;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    --hover-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+    --border-radius: 12px;
+    --transition-speed: 0.3s;
+}
+
+/* Global Reset & Typography */
+html,
+body,
+[class*="css"] {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--vodafone-black);
+    background-color: #FAFAFA;
+    /* Light gray background for contrast */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Main Container Adjustments */
+.block-container {
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+    max-width: 1200px;
+}
+
+/* Header Styling */
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    color: var(--vodafone-black);
+}
+
+h1 {
+    color: var(--vodafone-red);
+    text-shadow: 0 2px 4px rgba(230, 0, 0, 0.1);
+    animation: fadeInDown 0.8s ease-out;
+    margin: 0;
+    /* Updated for flex container alignment */
+}
+
+.logo-container h1 {
+    margin: 0;
+    line-height: 1.2;
+}
+
+.logo-container p {
+    margin: 0;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Buttons (Primary) */
+.stButton>button {
+    background-color: var(--vodafone-red) !important;
+    color: var(--vodafone-white) !important;
+    border: none;
+    border-radius: 25px;
+    /* Pill shape */
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    box-shadow: 0 4px 14px 0 rgba(230, 0, 0, 0.39);
+    transition: all var(--transition-speed) ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stButton>button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(230, 0, 0, 0.23);
+    background-color: #cc0000 !important;
+}
+
+.stButton>button:active {
+    transform: translateY(0);
+}
+
+/* File Uploader */
+.stFileUploader {
+    background-color: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    border: 1px dashed #ccc;
+    transition: all var(--transition-speed);
+}
+
+.stFileUploader:hover {
+    border-color: var(--vodafone-red);
+    box-shadow: var(--hover-shadow);
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+    background-color: var(--vodafone-gray);
+    border-right: 1px solid #e0e0e0;
+}
+
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+    color: var(--vodafone-black);
+}
+
+/* Info & Status Boxes */
+.stAlert {
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Custom Cards (simulated via markdown divs if needed, but styling default containers) */
+div[data-testid="column"] {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    margin-bottom: 1rem;
+}
+
+div[data-testid="column"]:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+/* Tabs */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 15px;
+    background-color: transparent;
+    padding-bottom: 10px;
+}
+
+.stTabs [data-baseweb="tab"] {
+    height: 50px;
+    white-space: pre-wrap;
+    background-color: white;
+    border-radius: 25px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 0 20px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.stTabs [aria-selected="true"] {
+    background-color: var(--vodafone-red) !important;
+    color: white !important;
+    border-color: var(--vodafone-red) !important;
+    box-shadow: 0 4px 10px rgba(230, 0, 0, 0.3);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -20px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.element-container {
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+/* Logo placement helpers */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.logo-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
