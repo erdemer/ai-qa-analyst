@@ -17,3 +17,7 @@ pip-delete-this-directory.txt
 # System
 .DS_Store
 Thumbs.db
+
+# Secrets
+.env
+.streamlit/secrets.toml
