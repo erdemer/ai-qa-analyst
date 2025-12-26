@@ -63,6 +63,8 @@ with st.sidebar:
 
     # API Key Management
     env_api_key = os.getenv("GOOGLE_API_KEY")
+    if not env_api_key and "GOOGLE_API_KEY" in st.secrets:
+        env_api_key = st.secrets["GOOGLE_API_KEY"]
     api_key_input = st.text_input(
         "Google API Key",
         value=env_api_key if env_api_key else "",
